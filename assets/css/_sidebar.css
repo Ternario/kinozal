@@ -1,0 +1,20 @@
+.vertical-slider {
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.vertical-slider img {
+  width: 100%;
+}
+
+.site-news-item {
+  clear: both;
+}
+
+.site-news-item__image {
+  float: left;
+  width: 75px;
+  margin: 0 10px 10px 0;
+}
+
+/*# sourceMappingURL=_sidebar.css.map */

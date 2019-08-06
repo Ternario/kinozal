@@ -1,0 +1,53 @@
+.main {
+    margin-bottom: $gap * 4;
+}
+
+.new-films, 
+.top-week {
+    .row {
+        margin-left: -$gap / 2;
+        margin-right: -$gap / 2;
+        margin-bottom: -$gap;
+
+    }
+    .thumbnail {
+        margin-bottom: 0;
+    }
+
+    &-item {
+        padding-left: $gap / 2;
+        padding-right: $gap / 2;
+        margin-bottom: $gap;
+
+        &-title {
+            margin: 0;
+            font-size: 1rem;
+            font-weight: bold;
+            @include text-shortener;
+        }
+
+        &-image {
+            width: 100%;
+        }
+
+        .thumbnail {
+            transition: background-color 0.25s ease;
+        }
+
+        .caption {
+            text-align: center;
+        }
+
+        &:hover {
+            .thumbnail {
+                border-color: $color-accent;
+                background-color: $color-accent;
+            }
+                  
+            .new-film-item__title,
+            .top-week-item__title {
+                color: lighten($color-gray, 15%);
+            }
+        } 
+    }
+}

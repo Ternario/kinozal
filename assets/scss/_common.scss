@@ -1,0 +1,75 @@
+html {
+  font-size: $font-size;
+}
+
+body {
+  font-size: 1rem;
+  font-family: $font-main;
+  overflow-y: scroll;
+}
+
+a {
+  color: $color-primary;
+
+  &:hover,
+  &:focus {
+    text-decoration: none;
+    color: $color-accent;
+  }
+}
+
+h1 {
+  font-family: $font-header;
+  margin: (-$gap / 2) 0 ($gap * 3);
+
+  @include xs-min {
+    font-size: 3rem;
+  }
+
+  @include xs {
+    font-size: 2rem;
+  }
+
+  &::after {
+    position: absolute;
+    content: "";
+    width: 100%;
+    margin: 0.9em 0 0 $gap;
+    border-bottom: 3px solid rgba(lighten($color-accent, 20%), 0.5);
+  }
+}
+
+h2 {
+  margin: ($gap * 4) 0 ($gap * 3) ($gap * 3);
+
+  font-family: $font-header;
+
+  @include xs-min {
+    font-size: 2.5rem;
+  }
+
+  @include xs {
+    font-size: 1.5rem;
+  }
+
+  &::before {
+    position: absolute;
+    left: 0;
+    width: 30px;
+  }
+}
+
+h3 {
+  @include xs-min {
+    font-size: 1.5rem;
+  }
+
+  @include xs {
+    font-size: 1.25rem;
+  }
+}
+
+section {
+  position: relative;
+  overflow: hidden;
+}
