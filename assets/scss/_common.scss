@@ -53,9 +53,20 @@ h2 {
   }
 
   &::before {
+    content: "";
     position: absolute;
     left: 0;
     width: 30px;
+    margin: 0.2em ;
+    border-bottom: 3px solid rgba(lighten($color-accent,20%), 0.5);
+  }
+
+  &::after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    margin: 0.9em 0 0$gap;
+    border-bottom: 3px solid rgba(lighten($color-accent,20%), 0.5);
   }
 }
 

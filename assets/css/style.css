@@ -90,9 +90,20 @@ h2 {
 }
 
 h2::before {
+  content: "";
   position: absolute;
   left: 0;
   width: 30px;
+  margin: 0.2em;
+  border-bottom: 3px solid rgba(242, 184, 102, 0.5);
+}
+
+h2::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  margin: 0.9em 0 0 15px;
+  border-bottom: 3px solid rgba(242, 184, 102, 0.5);
 }
 
 section {
@@ -161,8 +172,8 @@ section {
      text-overflow: ellipsis;
 }
 
-.new-films-item-image,
-.top-week-item-image {
+.new-films-item__image,
+.top-week-item__image {
   width: 100%;
 }
 
@@ -189,6 +200,47 @@ section {
 .top-week-item:hover .new-film-item__title,
 .top-week-item:hover .top-week-item__title {
   color: white;
+}
+
+.film-news img {
+  width: 100%;
+}
+
+.film-news-item:hover .thumbnail {
+  background-color: #f2b866;
+}
+
+.film-news-item:hover h3 > a {
+  color: #df8a13;
+}
+
+.film-news-item:hover .btn-warning {
+  background-color: #df8a13;
+}
+
+.film-news-item__text {
+  text-align: justify;
+}
+
+.film-news h3 > a {
+  -webkit-transition: color 0.25s ease;
+  -o-transition: color 0.25s ease;
+  transition: color 0.25s ease;
+}
+
+.film-news .thumbnail {
+  margin-bottom: 0;
+  -webkit-transition: background-color 0.25s ease;
+  -o-transition: background-color 0.25s ease;
+  transition: background-color 0.25s ease;
+}
+
+.film-news .btn-warning {
+  float: right;
+  margin-bottom: 30px;
+  -webkit-transition: background-color 0.25s ease;
+  -o-transition: background-color 0.25s ease;
+  transition: background-color 0.25s ease;
 }
 
 .left-sidebar {
@@ -273,6 +325,11 @@ section {
   margin-bottom: 0;
 }
 
+.top-films .list-group-item {
+  margin-right: -1px;
+  margin-left: -1px;
+}
+
 .top-films .badge {
   position: absolute;
   right: 10px;
@@ -313,6 +370,25 @@ section {
 
 .top-films-item:hover .badge, .top-films-item:focus .badge {
   background-color: #232323;
+}
+
+.footer {
+  padding-top: 45px;
+  color: #fbfbfb;
+  background-color: #232323;
+}
+
+.footer ul {
+  padding: 0;
+  list-style: none;
+}
+
+.footer a {
+  color: #909090;
+}
+
+.footer a:hover {
+  color: #f6f6f6;
 }
 
 @media (min-width: 576px) {

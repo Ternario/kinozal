@@ -26,7 +26,7 @@
             @include text-shortener;
         }
 
-        &-image {
+        &__image {
             width: 100%;
         }
 
@@ -49,5 +49,45 @@
                 color: lighten($color-gray, 15%);
             }
         } 
+    }
+}
+
+.film-news {
+    img {
+        width: 100%;
+    }
+
+    &-item {
+        &:hover {
+            .thumbnail {
+                background-color: lighten($color-accent, 20%)
+            }
+            h3 > a {
+                color: $color-accent;
+            }
+
+            .btn-warning {
+                background-color: $color-accent;
+            }
+        }
+
+        &__text {
+            text-align: justify;
+        }
+    }
+
+    h3 > a {
+        transition: color 0.25s ease;
+    }
+
+    .thumbnail {
+        margin-bottom: 0;
+        transition: background-color 0.25s ease;
+    }
+
+    .btn-warning {
+        float: right;
+        margin-bottom: $gap * 2;
+        transition: background-color 0.25s ease;
     }
 }
