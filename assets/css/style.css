@@ -1,4 +1,4 @@
-.header-logo__title, .header-logo__description {
+.header-logo__label, .header-logo__description {
   text-shadow: 1px 1px 5px black, 1px 1px 20px black;
 }
 
@@ -25,6 +25,15 @@
   background-color: #165690;
 }
 
+.navbar-header {
+  text-align: center;
+}
+
+.navbar-toggle {
+  float: none;
+  margin-right: 0;
+}
+
 .panel {
   border: none;
   margin-bottom: 30px;
@@ -37,9 +46,11 @@
   border: none;
 }
 
-.panel-title {
+.panel-label {
   letter-spacing: 0.1em;
   font-size: 1.2rem;
+  margin-bottom: 0;
+  margin-top: 0;
 }
 
 .panel-body {
@@ -59,7 +70,6 @@ html {
 body {
   font-size: 1rem;
   font-family: "PT Sans", sans-serif;
-  overflow-y: scroll;
 }
 
 a {
@@ -94,7 +104,7 @@ h2::before {
   position: absolute;
   left: 0;
   width: 30px;
-  margin: 0.2em;
+  margin: 0.2em 0;
   border-bottom: 3px solid rgba(242, 184, 102, 0.5);
 }
 
@@ -124,7 +134,7 @@ section {
   background-size: cover;
 }
 
-.header-logo__title {
+.header-logo__label {
   display: block;
   color: #df8a13;
   font-family: "PT Serif", serif;
@@ -138,6 +148,14 @@ section {
 }
 
 .main {
+  margin-bottom: 60px;
+}
+
+.main .site-search {
+  margin: -15px 0 45px;
+}
+
+.main .user-login {
   margin-bottom: 60px;
 }
 
@@ -160,8 +178,8 @@ section {
   margin-bottom: 15px;
 }
 
-.new-films-item-title,
-.top-week-item-title {
+.new-films-item__label,
+.top-week-item__label {
   margin: 0;
   font-size: 1rem;
   font-weight: bold;
@@ -195,10 +213,10 @@ section {
   background-color: #df8a13;
 }
 
-.new-films-item:hover .new-film-item__title,
-.new-films-item:hover .top-week-item__title,
-.top-week-item:hover .new-film-item__title,
-.top-week-item:hover .top-week-item__title {
+.new-films-item:hover .new-films-item__label,
+.new-films-item:hover .top-week-item__label,
+.top-week-item:hover .new-films-item__label,
+.top-week-item:hover .top-week-item__label {
   color: white;
 }
 
@@ -243,6 +261,27 @@ section {
   transition: background-color 0.25s ease;
 }
 
+.film-info {
+  font-size: 1.2em;
+}
+
+.film-info__badge {
+  font-size: 0.8rem;
+}
+
+.film-info__badge:not(:last-child) {
+  margin-right: 3%;
+}
+
+.film-info__well {
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+}
+
+.send-comment .btn {
+  float: right;
+}
+
 .left-sidebar {
   margin-bottom: 60px;
 }
@@ -261,12 +300,12 @@ section {
   position: relative;
 }
 
-.site-news-item:not(:last-of-type) {
+.site-news-item:not(:last-child) {
   min-height: 85px;
   margin-bottom: 15px;
 }
 
-.site-news-item:not(:last-of-type)::after {
+.site-news-item:not(:last-child)::after {
   content: "";
   position: absolute;
   right: 0;
@@ -277,10 +316,11 @@ section {
 }
 
 .site-news-item:hover .site-news-item__image {
+  border-color: #df8a13;
   background-color: #df8a13;
 }
 
-.site-news-item:hover .site-news-item__title a {
+.site-news-item:hover .site-news-item__label a {
   color: #df8a13;
 }
 
@@ -288,13 +328,20 @@ section {
   float: left;
   width: 75px;
   margin: 0 10px 10px 0;
-  -webkit-transition: background-color 0.5s;
-  -o-transition: background-color 0.5s;
-  transition: background-color 0.5s;
+  -webkit-transition: background-color 0.5s ease;
+  -o-transition: background-color 0.5s ease;
+  transition: background-color 0.5s ease;
 }
 
-.site-news-item__title {
+.site-news-item__image img {
+  width: 100%;
+}
+
+.site-news-item__label {
   margin-bottom: 10px;
+}
+
+.site-news-item__label a {
   display: -webkit-box;
   overflow: hidden;
   height: 50px;
@@ -302,9 +349,7 @@ section {
   line-height: 1.5rem;
   -webkit-box-orient: vertical;
   -webkit-line-clamp: 2;
-}
-
-.site-news-item__title .a {
+  color: #165690;
   -webkit-transition: color 0.5s;
   -o-transition: color 0.5s;
   transition: color 0.5s;
@@ -401,7 +446,7 @@ section {
   h3 {
     font-size: 1.5rem;
   }
-  .header-logo__title {
+  .header-logo__label {
     letter-spacing: 0.33em;
     font-size: 3.5rem;
   }
@@ -436,12 +481,12 @@ section {
     font-size: 2rem;
   }
   h2 {
-    font-size: 1.5rem;
+    font-size: 1.75rem;
   }
   h3 {
     font-size: 1.25rem;
   }
-  .header-logo__title {
+  .header-logo__label {
     letter-spacing: 0.2em;
     font-size: 2.5rem;
   }

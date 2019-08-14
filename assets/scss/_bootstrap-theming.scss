@@ -3,7 +3,7 @@
   background-color: darken($color-dark, 4%);
 
   .navbar-nav {
-    > .active >a {
+    > .active > a {
       background-color: saturate(darken($color-primary, 14%), 15%);
 
       &:hover,
@@ -12,22 +12,33 @@
       }
     }
 
-    > li > a {
-      transition: background-color 0.5s;
-
-      @include sm-min {
-        border-radius: 4px;
-      }
-      @include sm {
-        text-align: center;
-      }
-
-      &:hover,
-      &:focus {
-        background-color: $color-primary;
+    > li {
+      > a {
+        transition: background-color 0.5s;
+  
+        @include sm-min {
+          border-radius: 4px;
+        }
+        @include sm {
+          text-align: center;
+        }
+  
+        &:hover,
+        &:focus {
+          background-color: $color-primary;
+        }
       }
     }
   }
+}
+
+.navbar-header {
+  text-align: center;
+}
+
+.navbar-toggle {
+  float: none;
+  margin-right: 0;
 }
 
 .navbar-left {
@@ -67,9 +78,11 @@
     }
   }
 
-  &-title {
+  &-label {
     letter-spacing: 0.1em;
     font-size: 1.2rem;
+    margin-bottom: 0;
+    margin-top: 0;
   }
 
   &-body {
