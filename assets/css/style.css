@@ -266,7 +266,7 @@ section {
 }
 
 .film-info__badge {
-  font-size: 0.8rem;
+  font-size: 0.8em;
 }
 
 .film-info__badge:not(:last-child) {
@@ -280,6 +280,10 @@ section {
 
 .send-comment .btn {
   float: right;
+}
+
+.embed-responsive {
+  border-radius: 4px 4px 0 0;
 }
 
 .left-sidebar {

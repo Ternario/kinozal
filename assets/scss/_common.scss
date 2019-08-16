@@ -5,7 +5,6 @@ html {
 body {
   font-size: 1rem;
   font-family: $font-main;
-  // overflow-y: scroll;
 }
 
 a {
@@ -65,7 +64,7 @@ h2 {
     content: "";
     position: absolute;
     width: 100%;
-    margin: 0.9em 0 0$gap;
+    margin: 0.9em 0 0 $gap;
     border-bottom: 3px solid rgba(lighten($color-accent,20%), 0.5);
   }
 }
