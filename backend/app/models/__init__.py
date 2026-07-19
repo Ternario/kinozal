@@ -8,3 +8,4 @@ from app.models.comment import Comment
 from app.models.genre import Genre
 from app.models.media_genres import media_genres
 from app.models.search_query import SearchQuery
+from app.models.news import News

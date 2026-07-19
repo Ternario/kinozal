@@ -1,8 +1,8 @@
 """init
 
-Revision ID: b11bfa0e3b64
+Revision ID: 1badf02a141d
 Revises: 
-Create Date: 2026-05-17 22:45:31.883475
+Create Date: 2026-07-19 13:53:22.547248
 
 """
 from typing import Sequence, Union
@@ -12,7 +12,7 @@ import sqlalchemy as sa
 
 
 # revision identifiers, used by Alembic.
-revision: str = 'b11bfa0e3b64'
+revision: str = '1badf02a141d'
 down_revision: Union[str, Sequence[str], None] = None
 branch_labels: Union[str, Sequence[str], None] = None
 depends_on: Union[str, Sequence[str], None] = None
@@ -34,13 +34,27 @@ def upgrade() -> None:
     sa.Column('description', sa.Text(), nullable=False),
     sa.Column('type', sa.Enum('MOVIE', 'SERIES', 'ANIMATION', name='contenttype'), nullable=False),
     sa.Column('seasons_count', sa.Integer(), nullable=True),
+    sa.Column('image_path', sa.String(length=500), nullable=True),
+    sa.Column('release_date', sa.Date(), nullable=False),
+    sa.Column('trailer', sa.String(length=500), nullable=False),
+    sa.Column('id', sa.Integer(), autoincrement=True, nullable=False),
+    sa.Column('created_at', sa.DateTime(), server_default=sa.text('now()'), nullable=False),
+    sa.Column('updated_at', sa.DateTime(), server_default=sa.text('now()'), nullable=False),
+    sa.CheckConstraint("\n            (type = 'MOVIE' AND seasons_count IS NULL)\n            OR\n            (type = 'SERIES' AND seasons_count BETWEEN 1 AND 200)\n            ", name='check_media_type_seasons'),
+    sa.CheckConstraint('CHAR_LENGTH(description) BETWEEN 100 AND 5000', name='check_media_description_length'),
+    sa.CheckConstraint('CHAR_LENGTH(title) BETWEEN 7 AND 255', name='check_media_title_length'),
+    sa.PrimaryKeyConstraint('id')
+    )
+    op.create_table('news',
+    sa.Column('title', sa.String(length=255), nullable=False),
+    sa.Column('content', sa.Text(), nullable=False),
     sa.Column('image_url', sa.String(length=500), nullable=True),
     sa.Column('id', sa.Integer(), autoincrement=True, nullable=False),
     sa.Column('created_at', sa.DateTime(), server_default=sa.text('now()'), nullable=False),
     sa.Column('updated_at', sa.DateTime(), server_default=sa.text('now()'), nullable=False),
-    sa.CheckConstraint('length(description) <= 2000', name='comment_content_length'),
-    sa.CheckConstraint('seasons_count BETWEEN 1 AND 200', name='check_seasons_count_range'),
-    sa.PrimaryKeyConstraint('id')
+    sa.CheckConstraint('length(content) <= 2000', name='news_content_length'),
+    sa.PrimaryKeyConstraint('id'),
+    sa.UniqueConstraint('title')
     )
     op.create_table('search_queries',
     sa.Column('query', sa.String(length=255), nullable=False),
@@ -48,23 +62,23 @@ def upgrade() -> None:
     sa.Column('id', sa.Integer(), autoincrement=True, nullable=False),
     sa.Column('created_at', sa.DateTime(), server_default=sa.text('now()'), nullable=False),
     sa.Column('updated_at', sa.DateTime(), server_default=sa.text('now()'), nullable=False),
-    sa.CheckConstraint('searches_count >= 1', name='comment_content_length'),
+    sa.CheckConstraint('searches_count >= 1', name='check_search_count_min_value'),
     sa.PrimaryKeyConstraint('id'),
     sa.UniqueConstraint('query')
     )
     op.create_table('users',
-    sa.Column('username', sa.String(), nullable=True),
-    sa.Column('email', sa.String(), nullable=False),
-    sa.Column('password', sa.String(), nullable=False),
-    sa.Column('first_name', sa.String(), nullable=False),
-    sa.Column('last_name', sa.String(), nullable=False),
-    sa.Column('date_of_birth', sa.String(), nullable=True),
-    sa.Column('is_staff', sa.Boolean(), server_default=sa.text('false'), nullable=False),
-    sa.Column('is_superuser', sa.Boolean(), server_default=sa.text('false'), nullable=False),
-    sa.Column('is_admin', sa.Boolean(), server_default=sa.text('false'), nullable=False),
-    sa.Column('is_moderator', sa.Boolean(), server_default=sa.text('false'), nullable=False),
-    sa.Column('is_active', sa.Boolean(), server_default=sa.text('true'), nullable=False),
-    sa.Column('is_deleted', sa.Boolean(), server_default=sa.text('false'), nullable=False),
+    sa.Column('username', sa.String(length=155), nullable=True),
+    sa.Column('email', sa.String(length=255), nullable=False),
+    sa.Column('password', sa.String(length=255), nullable=False),
+    sa.Column('first_name', sa.String(length=155), nullable=False),
+    sa.Column('last_name', sa.String(length=155), nullable=False),
+    sa.Column('date_of_birth', sa.Date(), nullable=True),
+    sa.Column('is_staff', sa.Boolean(), server_default=sa.text('0'), nullable=False),
+    sa.Column('is_superuser', sa.Boolean(), server_default=sa.text('0'), nullable=False),
+    sa.Column('is_admin', sa.Boolean(), server_default=sa.text('0'), nullable=False),
+    sa.Column('is_moderator', sa.Boolean(), server_default=sa.text('0'), nullable=False),
+    sa.Column('is_active', sa.Boolean(), server_default=sa.text('1'), nullable=False),
+    sa.Column('is_deleted', sa.Boolean(), server_default=sa.text('0'), nullable=False),
     sa.Column('deleted_at', sa.DateTime(), nullable=True),
     sa.Column('id', sa.Integer(), autoincrement=True, nullable=False),
     sa.Column('created_at', sa.DateTime(), server_default=sa.text('now()'), nullable=False),
@@ -75,18 +89,25 @@ def upgrade() -> None:
     )
     op.create_table('comments',
     sa.Column('content', sa.Text(), nullable=False),
+    sa.Column('is_published', sa.Boolean(), server_default=sa.text('1'), nullable=False),
     sa.Column('user_id', sa.Integer(), nullable=False),
     sa.Column('movie_id', sa.Integer(), nullable=False),
     sa.Column('to_comment_id', sa.Integer(), nullable=True),
-    sa.Column('is_published', sa.Boolean(), server_default=sa.text('True'), nullable=False),
     sa.Column('id', sa.Integer(), autoincrement=True, nullable=False),
     sa.Column('created_at', sa.DateTime(), server_default=sa.text('now()'), nullable=False),
     sa.Column('updated_at', sa.DateTime(), server_default=sa.text('now()'), nullable=False),
-    sa.CheckConstraint('length(content) <= 2000', name='comment_content_length'),
+    sa.CheckConstraint('CHAR_LENGTH(content) <= 2000', name='comment_content_length'),
     sa.ForeignKeyConstraint(['movie_id'], ['media.id'], ),
     sa.ForeignKeyConstraint(['to_comment_id'], ['comments.id'], ),
     sa.ForeignKeyConstraint(['user_id'], ['users.id'], ),
     sa.PrimaryKeyConstraint('id')
+    )
+    op.create_table('favorite_media',
+    sa.Column('user_id', sa.Integer(), nullable=False),
+    sa.Column('media_id', sa.Integer(), nullable=False),
+    sa.ForeignKeyConstraint(['media_id'], ['media.id'], ondelete='CASCADE'),
+    sa.ForeignKeyConstraint(['user_id'], ['users.id'], ondelete='CASCADE'),
+    sa.PrimaryKeyConstraint('user_id', 'media_id')
     )
     op.create_table('media_genres',
     sa.Column('media_id', sa.Integer(), nullable=False),
@@ -98,7 +119,7 @@ def upgrade() -> None:
     op.create_table('user_profiles',
     sa.Column('user_id', sa.Integer(), nullable=False),
     sa.Column('theme', sa.Enum('LIGHT', 'DARK', name='profiletheme'), nullable=False),
-    sa.Column('receive_email_notifications', sa.Boolean(), nullable=False),
+    sa.Column('receive_email_notifications', sa.Boolean(), server_default=sa.text('1'), nullable=False),
     sa.Column('id', sa.Integer(), autoincrement=True, nullable=False),
     sa.Column('created_at', sa.DateTime(), server_default=sa.text('now()'), nullable=False),
     sa.Column('updated_at', sa.DateTime(), server_default=sa.text('now()'), nullable=False),
@@ -106,25 +127,19 @@ def upgrade() -> None:
     sa.PrimaryKeyConstraint('id'),
     sa.UniqueConstraint('user_id')
     )
-    op.create_table('favorite_media',
-    sa.Column('user_id', sa.Integer(), nullable=False),
-    sa.Column('media_id', sa.Integer(), nullable=False),
-    sa.ForeignKeyConstraint(['media_id'], ['media.id'], ondelete='CASCADE'),
-    sa.ForeignKeyConstraint(['user_id'], ['user_profiles.id'], ondelete='CASCADE'),
-    sa.PrimaryKeyConstraint('user_id', 'media_id')
-    )
     # ### end Alembic commands ###
 
 
 def downgrade() -> None:
     """Downgrade schema."""
     # ### commands auto generated by Alembic - please adjust! ###
-    op.drop_table('favorite_media')
     op.drop_table('user_profiles')
     op.drop_table('media_genres')
+    op.drop_table('favorite_media')
     op.drop_table('comments')
     op.drop_table('users')
     op.drop_table('search_queries')
+    op.drop_table('news')
     op.drop_table('media')
     op.drop_table('genres')
     # ### end Alembic commands ###

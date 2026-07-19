@@ -1,30 +1,32 @@
+from pathlib import Path
+
 from pydantic_settings import BaseSettings, SettingsConfigDict
 
 
 class Settings(BaseSettings):
-    POSTGRES_USER: str
-    POSTGRES_PASSWORD: str
-    POSTGRES_DB: str
+    MYSQL_USER: str
+    MYSQL_PASSWORD: str
+    MYSQL_DATABASE: str
     DB_HOST: str
     DB_PORT: int
 
     @property
-    def DATABASE_URL(self):
+    def DATABASE_URL(self) -> str:
         return (
-            f'postgresql+asyncpg://'
-            f'{self.POSTGRES_USER}:'
-            f'{self.POSTGRES_PASSWORD}@'
+            f'mysql+asyncmy://'
+            f'{self.MYSQL_USER}:'
+            f'{self.MYSQL_PASSWORD}@'
             f'{self.DB_HOST}:'
             f'{self.DB_PORT}/'
-            f'{self.POSTGRES_DB}'
+            f'{self.MYSQL_DATABASE}'
         )
 
-    model_config = SettingsConfigDict(
-        env_file='.env.database'
-    )
+    BASE_URL: str
+    UPLOAD_DIR: Path = Path('static/media')
 
-    # class Config:
-    #     env_file = '.env.database'
+    model_config = SettingsConfigDict(
+        env_file=('.env.database', '.env.backend')
+    )
 
 
 settings = Settings()

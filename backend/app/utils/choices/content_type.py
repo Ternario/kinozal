@@ -6,6 +6,6 @@ class ContentType(str, Enum):
     Types of media content.
     """
 
-    MOVIE = 'movie'
-    SERIES = 'series'
-    ANIMATION = 'animation'
+    MOVIE = 'Movie'
+    SERIES = 'Series'
+    ANIMATION = 'Animation'

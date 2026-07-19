@@ -1,4 +1,4 @@
-from sqlalchemy import String, Table, Column, ForeignKey
+from sqlalchemy import String
 from sqlalchemy.orm import Mapped, mapped_column
 
 from db.base import Base
@@ -6,6 +6,4 @@ from db.base import Base
 
 class Genre(Base):
     __tablename__ = 'genres'
-    name: Mapped[str] = mapped_column(String(50), unique=True)
-
-
+    name: Mapped[str] = mapped_column(String(50), unique=True, nullable=False)
