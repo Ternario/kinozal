@@ -34,6 +34,6 @@ services:
     image: adminer
     restart: always
     ports:
-     - '8889:8081'
+     - '8888:8080'
 volumes:
   mysql_data:

@@ -1,0 +1,848 @@
+[
+  {
+    "model": "kinozal.media",
+    "pk": 1,
+    "fields": {
+      "title": "Interstellar Journey",
+      "description": "A group of astronauts travels beyond known space to discover new worlds and hidden secrets of the universe during a dangerous mission.",
+      "type": "MOVIE",
+      "seasons_count": null,
+      "image_path": "/media/interstellar.jpg",
+      "release_date": "2014-11-07",
+      "trailer": "https://youtube.com/watch?v=test1",
+      "genres": [
+        8,
+        1
+      ]
+    }
+  },
+  {
+    "model": "kinozal.media",
+    "pk": 2,
+    "fields": {
+      "title": "Dark Kingdom",
+      "description": "A young warrior must unite several kingdoms and fight against an ancient evil force threatening the entire fantasy world.",
+      "type": "SERIES",
+      "seasons_count": 5,
+      "image_path": "/media/dark_kingdom.jpg",
+      "release_date": "2020-03-15",
+      "trailer": "https://youtube.com/watch?v=test2",
+      "genres": [
+        5,
+        7
+      ]
+    }
+  },
+  {
+    "model": "kinozal.media",
+    "pk": 3,
+    "fields": {
+      "title": "Funny Neighborhood",
+      "description": "A comedy story about friends who experience funny situations while trying to build a better life in a big city.",
+      "type": "MOVIE",
+      "seasons_count": null,
+      "image_path": "/media/funny.jpg",
+      "release_date": "2022-05-20",
+      "trailer": "https://youtube.com/watch?v=test3",
+      "genres": [
+        3,
+        9
+      ]
+    }
+  },
+  {
+    "model": "kinozal.media",
+    "pk": 4,
+    "fields": {
+      "title": "The Last Survivor",
+      "description": "A survivor tries to stay alive after a mysterious disaster destroys civilization and leaves humanity fighting for survival.",
+      "type": "MOVIE",
+      "seasons_count": null,
+      "image_path": "/media/survivor.jpg",
+      "release_date": "2018-09-10",
+      "trailer": "https://youtube.com/watch?v=test4",
+      "genres": [
+        6,
+        7
+      ]
+    }
+  },
+  {
+    "model": "kinozal.media",
+    "pk": 5,
+    "fields": {
+      "title": "Future Earth",
+      "description": "Scientists create a new civilization on another planet after Earth becomes dangerous and impossible for humans to inhabit.",
+      "type": "SERIES",
+      "seasons_count": 3,
+      "image_path": "/media/future.jpg",
+      "release_date": "2023-01-12",
+      "trailer": "https://youtube.com/watch?v=test5",
+      "genres": [
+        8,
+        4
+      ]
+    }
+  },
+  {
+    "model": "kinozal.media",
+    "pk": 6,
+    "fields": {
+      "title": "Ocean Mystery",
+      "description": "A marine explorer discovers an unknown civilization hidden deep beneath the ocean while investigating strange underwater signals.",
+      "type": "MOVIE",
+      "seasons_count": null,
+      "image_path": "/media/ocean_mystery.jpg",
+      "release_date": "2017-06-21",
+      "trailer": "https://youtube.com/watch?v=test6",
+      "genres": [
+        2,
+        7
+      ]
+    }
+  },
+  {
+    "model": "kinozal.media",
+    "pk": 7,
+    "fields": {
+      "title": "Ancient Legends",
+      "description": "A historian discovers forgotten legends that reveal the secrets of an ancient civilization and its mysterious rulers.",
+      "type": "SERIES",
+      "seasons_count": 4,
+      "image_path": "/media/ancient_legends.jpg",
+      "release_date": "2019-02-14",
+      "trailer": "https://youtube.com/watch?v=test7",
+      "genres": [
+        4,
+        5
+      ]
+    }
+  },
+  {
+    "model": "kinozal.media",
+    "pk": 8,
+    "fields": {
+      "title": "Robot Revolution",
+      "description": "Artificial intelligence becomes more advanced than humans expected and changes society forever after a global event.",
+      "type": "MOVIE",
+      "seasons_count": null,
+      "image_path": "/media/robot_revolution.jpg",
+      "release_date": "2025-04-01",
+      "trailer": "https://youtube.com/watch?v=test8",
+      "genres": [
+        8,
+        6
+      ]
+    }
+  },
+  {
+    "model": "kinozal.media",
+    "pk": 9,
+    "fields": {
+      "title": "Hidden Truth",
+      "description": "A journalist investigates a mysterious case that reveals corruption and hidden secrets inside a powerful organization.",
+      "type": "SERIES",
+      "seasons_count": 2,
+      "image_path": "/media/hidden_truth.jpg",
+      "release_date": "2021-11-05",
+      "trailer": "https://youtube.com/watch?v=test9",
+      "genres": [
+        7,
+        4
+      ]
+    }
+  },
+  {
+    "model": "kinozal.media",
+    "pk": 10,
+    "fields": {
+      "title": "Wild Planet",
+      "description": "A documentary team travels across the planet to capture rare animals and explore untouched natural environments.",
+      "type": "DOCUMENTARY",
+      "seasons_count": null,
+      "image_path": "/media/wild_planet.jpg",
+      "release_date": "2020-07-18",
+      "trailer": "https://youtube.com/watch?v=test10",
+      "genres": [
+        10
+      ]
+    }
+  },
+  {
+    "model": "kinozal.media",
+    "pk": 11,
+    "fields": {
+      "title": "Sky Warriors",
+      "description": "Elite pilots defend their country from an unexpected attack while facing personal challenges and dangerous missions.",
+      "type": "MOVIE",
+      "seasons_count": null,
+      "image_path": "/media/sky_warriors.jpg",
+      "release_date": "2016-08-22",
+      "trailer": "https://youtube.com/watch?v=test11",
+      "genres": [
+        1,
+        2
+      ]
+    }
+  },
+  {
+    "model": "kinozal.media",
+    "pk": 12,
+    "fields": {
+      "title": "Magic Academy",
+      "description": "Young students learn magical abilities at a special academy where they discover friendship and hidden powers.",
+      "type": "SERIES",
+      "seasons_count": 6,
+      "image_path": "/media/magic_academy.jpg",
+      "release_date": "2018-09-01",
+      "trailer": "https://youtube.com/watch?v=test12",
+      "genres": [
+        5,
+        3
+      ]
+    }
+  },
+  {
+    "model": "kinozal.media",
+    "pk": 13,
+    "fields": {
+      "title": "Lost Island",
+      "description": "A group of travelers gets stranded on a mysterious island and tries to survive while uncovering its secrets.",
+      "type": "MOVIE",
+      "seasons_count": null,
+      "image_path": "/media/lost_island.jpg",
+      "release_date": "2015-03-11",
+      "trailer": "https://youtube.com/watch?v=test13",
+      "genres": [
+        2,
+        6
+      ]
+    }
+  },
+  {
+    "model": "kinozal.media",
+    "pk": 14,
+    "fields": {
+      "title": "City Stories",
+      "description": "Different people living in a large city face everyday problems, relationships and unexpected life situations.",
+      "type": "SERIES",
+      "seasons_count": 7,
+      "image_path": "/media/city_stories.jpg",
+      "release_date": "2022-10-10",
+      "trailer": "https://youtube.com/watch?v=test14",
+      "genres": [
+        3,
+        9
+      ]
+    }
+  },
+  {
+    "model": "kinozal.media",
+    "pk": 15,
+    "fields": {
+      "title": "Frozen World",
+      "description": "Scientists explore a frozen planet where they discover unusual forms of life and dangerous environmental changes.",
+      "type": "ANIMATION",
+      "seasons_count": null,
+      "image_path": "/media/frozen_world.jpg",
+      "release_date": "2024-12-20",
+      "trailer": "https://youtube.com/watch?v=test15",
+      "genres": [
+        8,
+        5
+      ]
+    }
+  },
+  {
+    "model": "kinozal.media",
+    "pk": 16,
+    "fields": {
+      "title": "Night Hunters",
+      "description": "A team of investigators searches for a mysterious criminal who appears only during the night and leaves strange clues behind.",
+      "type": "MOVIE",
+      "seasons_count": null,
+      "image_path": "/media/night_hunters.jpg",
+      "release_date": "2019-10-31",
+      "trailer": "https://youtube.com/watch?v=test16",
+      "genres": [
+        6,
+        7
+      ]
+    }
+  },
+  {
+    "model": "kinozal.media",
+    "pk": 17,
+    "fields": {
+      "title": "Space Colony",
+      "description": "The first human colony on another planet struggles with survival, resources and conflicts between its inhabitants.",
+      "type": "SERIES",
+      "seasons_count": 5,
+      "image_path": "/media/space_colony.jpg",
+      "release_date": "2023-02-17",
+      "trailer": "https://youtube.com/watch?v=test17",
+      "genres": [
+        8,
+        1
+      ]
+    }
+  },
+  {
+    "model": "kinozal.media",
+    "pk": 18,
+    "fields": {
+      "title": "Little Heroes",
+      "description": "A group of young friends discovers that they have special abilities and must protect their hometown from danger.",
+      "type": "ANIMATION",
+      "seasons_count": null,
+      "image_path": "/media/little_heroes.jpg",
+      "release_date": "2021-05-25",
+      "trailer": "https://youtube.com/watch?v=test18",
+      "genres": [
+        3,
+        5
+      ]
+    }
+  },
+  {
+    "model": "kinozal.media",
+    "pk": 19,
+    "fields": {
+      "title": "Broken Code",
+      "description": "A programmer discovers a hidden message inside a computer system that leads to a dangerous conspiracy.",
+      "type": "MOVIE",
+      "seasons_count": null,
+      "image_path": "/media/broken_code.jpg",
+      "release_date": "2020-08-08",
+      "trailer": "https://youtube.com/watch?v=test19",
+      "genres": [
+        7,
+        8
+      ]
+    }
+  },
+  {
+    "model": "kinozal.media",
+    "pk": 20,
+    "fields": {
+      "title": "Royal Empire",
+      "description": "A young ruler must defend the kingdom from enemies while dealing with politics, betrayal and family conflicts.",
+      "type": "SERIES",
+      "seasons_count": 8,
+      "image_path": "/media/royal_empire.jpg",
+      "release_date": "2017-01-30",
+      "trailer": "https://youtube.com/watch?v=test20",
+      "genres": [
+        4,
+        5
+      ]
+    }
+  },
+  {
+    "model": "kinozal.media",
+    "pk": 21,
+    "fields": {
+      "title": "Laugh Factory",
+      "description": "A comedy group creates unusual performances and experiences hilarious situations while becoming famous worldwide.",
+      "type": "MOVIE",
+      "seasons_count": null,
+      "image_path": "/media/laugh_factory.jpg",
+      "release_date": "2022-03-12",
+      "trailer": "https://youtube.com/watch?v=test21",
+      "genres": [
+        3
+      ]
+    }
+  },
+  {
+    "model": "kinozal.media",
+    "pk": 22,
+    "fields": {
+      "title": "Deep Secrets",
+      "description": "A detective investigates a series of mysterious events connected with a forgotten experiment from the past.",
+      "type": "SERIES",
+      "seasons_count": 3,
+      "image_path": "/media/deep_secrets.jpg",
+      "release_date": "2019-06-16",
+      "trailer": "https://youtube.com/watch?v=test22",
+      "genres": [
+        7,
+        6
+      ]
+    }
+  },
+  {
+    "model": "kinozal.media",
+    "pk": 23,
+    "fields": {
+      "title": "Animal Kingdom",
+      "description": "A documentary exploring wildlife, ecosystems and the relationship between animals and their natural habitats.",
+      "type": "DOCUMENTARY",
+      "seasons_count": null,
+      "image_path": "/media/animal_kingdom.jpg",
+      "release_date": "2018-04-04",
+      "trailer": "https://youtube.com/watch?v=test23",
+      "genres": [
+        10
+      ]
+    }
+  },
+  {
+    "model": "kinozal.media",
+    "pk": 24,
+    "fields": {
+      "title": "Dragon Valley",
+      "description": "A group of adventurers discovers a hidden valley where ancient creatures and magical secrets still exist.",
+      "type": "MOVIE",
+      "seasons_count": null,
+      "image_path": "/media/dragon_valley.jpg",
+      "release_date": "2016-07-07",
+      "trailer": "https://youtube.com/watch?v=test24",
+      "genres": [
+        2,
+        5
+      ]
+    }
+  },
+  {
+    "model": "kinozal.media",
+    "pk": 25,
+    "fields": {
+      "title": "Digital Future",
+      "description": "A technology company develops artificial intelligence that changes human life and creates unexpected consequences.",
+      "type": "SERIES",
+      "seasons_count": 4,
+      "image_path": "/media/digital_future.jpg",
+      "release_date": "2025-01-19",
+      "trailer": "https://youtube.com/watch?v=test25",
+      "genres": [
+        8,
+        7
+      ]
+    }
+  },
+  {
+    "model": "kinozal.media",
+    "pk": 26,
+    "fields": {
+      "title": "Mountain Rescue",
+      "description": "A rescue team fights against extreme weather conditions while trying to save people trapped in the mountains.",
+      "type": "MOVIE",
+      "seasons_count": null,
+      "image_path": "/media/mountain_rescue.jpg",
+      "release_date": "2020-12-05",
+      "trailer": "https://youtube.com/watch?v=test26",
+      "genres": [
+        1,
+        2
+      ]
+    }
+  },
+  {
+    "model": "kinozal.media",
+    "pk": 27,
+    "fields": {
+      "title": "Dream Makers",
+      "description": "Artists and creators try to achieve success while facing personal challenges and difficult choices.",
+      "type": "SERIES",
+      "seasons_count": 2,
+      "image_path": "/media/dream_makers.jpg",
+      "release_date": "2021-09-09",
+      "trailer": "https://youtube.com/watch?v=test27",
+      "genres": [
+        3,
+        9
+      ]
+    }
+  },
+  {
+    "model": "kinozal.media",
+    "pk": 28,
+    "fields": {
+      "title": "Shadow Island",
+      "description": "Explorers arrive on a mysterious island where every discovery reveals a darker hidden truth.",
+      "type": "MOVIE",
+      "seasons_count": null,
+      "image_path": "/media/shadow_island.jpg",
+      "release_date": "2017-11-11",
+      "trailer": "https://youtube.com/watch?v=test28",
+      "genres": [
+        6,
+        7
+      ]
+    }
+  },
+  {
+    "model": "kinozal.media",
+    "pk": 29,
+    "fields": {
+      "title": "Magic Forest",
+      "description": "Children enter an enchanted forest where they meet magical creatures and discover a forgotten world.",
+      "type": "ANIMATION",
+      "seasons_count": null,
+      "image_path": "/media/magic_forest.jpg",
+      "release_date": "2023-06-23",
+      "trailer": "https://youtube.com/watch?v=test29",
+      "genres": [
+        5,
+        2
+      ]
+    }
+  },
+  {
+    "model": "kinozal.media",
+    "pk": 30,
+    "fields": {
+      "title": "Final Mission",
+      "description": "A special forces team receives its most dangerous mission and must prevent a global catastrophe.",
+      "type": "MOVIE",
+      "seasons_count": null,
+      "image_path": "/media/final_mission.jpg",
+      "release_date": "2019-12-20",
+      "trailer": "https://youtube.com/watch?v=test30",
+      "genres": [
+        1,
+        7
+      ]
+    }
+  },
+  {
+    "model": "kinozal.media",
+    "pk": 31,
+    "fields": {
+      "title": "Frozen Kingdom",
+      "description": "A young explorer travels to a frozen land where ancient secrets and forgotten civilizations are hidden beneath the ice.",
+      "type": "MOVIE",
+      "seasons_count": null,
+      "image_path": "/media/frozen_kingdom.jpg",
+      "release_date": "2020-01-25",
+      "trailer": "https://youtube.com/watch?v=test31",
+      "genres": [
+        2,
+        5
+      ]
+    }
+  },
+  {
+    "model": "kinozal.media",
+    "pk": 32,
+    "fields": {
+      "title": "Modern Family",
+      "description": "A family living in a modern city faces everyday challenges, relationships and unexpected funny situations.",
+      "type": "SERIES",
+      "seasons_count": 9,
+      "image_path": "/media/modern_family.jpg",
+      "release_date": "2018-04-12",
+      "trailer": "https://youtube.com/watch?v=test32",
+      "genres": [
+        3,
+        9
+      ]
+    }
+  },
+  {
+    "model": "kinozal.media",
+    "pk": 33,
+    "fields": {
+      "title": "Galactic War",
+      "description": "Several civilizations fight for control over the galaxy while heroes search for a peaceful solution.",
+      "type": "MOVIE",
+      "seasons_count": null,
+      "image_path": "/media/galactic_war.jpg",
+      "release_date": "2024-03-18",
+      "trailer": "https://youtube.com/watch?v=test33",
+      "genres": [
+        8,
+        1
+      ]
+    }
+  },
+  {
+    "model": "kinozal.media",
+    "pk": 34,
+    "fields": {
+      "title": "Hidden Castle",
+      "description": "A group of travelers discovers an abandoned castle filled with mysteries, legends and forgotten treasures.",
+      "type": "SERIES",
+      "seasons_count": 3,
+      "image_path": "/media/hidden_castle.jpg",
+      "release_date": "2017-08-15",
+      "trailer": "https://youtube.com/watch?v=test34",
+      "genres": [
+        5,
+        6
+      ]
+    }
+  },
+  {
+    "model": "kinozal.media",
+    "pk": 35,
+    "fields": {
+      "title": "Ocean Life",
+      "description": "A documentary crew explores marine ecosystems and studies the incredible creatures living underwater.",
+      "type": "DOCUMENTARY",
+      "seasons_count": null,
+      "image_path": "/media/ocean_life.jpg",
+      "release_date": "2022-02-22",
+      "trailer": "https://youtube.com/watch?v=test35",
+      "genres": [
+        10
+      ]
+    }
+  },
+  {
+    "model": "kinozal.media",
+    "pk": 36,
+    "fields": {
+      "title": "Criminal Mind",
+      "description": "An investigator uses advanced methods to solve complicated crimes and uncover dangerous criminals.",
+      "type": "SERIES",
+      "seasons_count": 6,
+      "image_path": "/media/criminal_mind.jpg",
+      "release_date": "2016-10-10",
+      "trailer": "https://youtube.com/watch?v=test36",
+      "genres": [
+        7,
+        4
+      ]
+    }
+  },
+  {
+    "model": "kinozal.media",
+    "pk": 37,
+    "fields": {
+      "title": "Tiny Adventures",
+      "description": "Small creatures begin a huge adventure where they discover friendship, courage and the importance of teamwork.",
+      "type": "ANIMATION",
+      "seasons_count": null,
+      "image_path": "/media/tiny_adventures.jpg",
+      "release_date": "2023-05-14",
+      "trailer": "https://youtube.com/watch?v=test37",
+      "genres": [
+        2,
+        3
+      ]
+    }
+  },
+  {
+    "model": "kinozal.media",
+    "pk": 38,
+    "fields": {
+      "title": "Last Survivor",
+      "description": "After a global disaster, the last remaining people try to rebuild civilization in a dangerous new world.",
+      "type": "MOVIE",
+      "seasons_count": null,
+      "image_path": "/media/last_survivor.jpg",
+      "release_date": "2015-09-19",
+      "trailer": "https://youtube.com/watch?v=test38",
+      "genres": [
+        6,
+        8
+      ]
+    }
+  },
+  {
+    "model": "kinozal.media",
+    "pk": 39,
+    "fields": {
+      "title": "Love Letters",
+      "description": "Two people from different worlds discover love while overcoming family problems and difficult decisions.",
+      "type": "MOVIE",
+      "seasons_count": null,
+      "image_path": "/media/love_letters.jpg",
+      "release_date": "2021-02-14",
+      "trailer": "https://youtube.com/watch?v=test39",
+      "genres": [
+        9,
+        4
+      ]
+    }
+  },
+  {
+    "model": "kinozal.media",
+    "pk": 40,
+    "fields": {
+      "title": "Ancient World",
+      "description": "Researchers explore ancient ruins and uncover information about civilizations that disappeared thousands of years ago.",
+      "type": "DOCUMENTARY",
+      "seasons_count": null,
+      "image_path": "/media/ancient_world.jpg",
+      "release_date": "2019-07-07",
+      "trailer": "https://youtube.com/watch?v=test40",
+      "genres": [
+        10,
+        4
+      ]
+    }
+  },
+  {
+    "model": "kinozal.media",
+    "pk": 41,
+    "fields": {
+      "title": "Cyber City",
+      "description": "In a futuristic city controlled by technology, hackers discover a secret that threatens humanity.",
+      "type": "SERIES",
+      "seasons_count": 4,
+      "image_path": "/media/cyber_city.jpg",
+      "release_date": "2025-05-05",
+      "trailer": "https://youtube.com/watch?v=test41",
+      "genres": [
+        8,
+        7
+      ]
+    }
+  },
+  {
+    "model": "kinozal.media",
+    "pk": 42,
+    "fields": {
+      "title": "Wild Adventure",
+      "description": "A team of explorers travels through dangerous places searching for lost treasures and forgotten secrets.",
+      "type": "MOVIE",
+      "seasons_count": null,
+      "image_path": "/media/wild_adventure.jpg",
+      "release_date": "2018-06-30",
+      "trailer": "https://youtube.com/watch?v=test42",
+      "genres": [
+        1,
+        2
+      ]
+    }
+  },
+  {
+    "model": "kinozal.media",
+    "pk": 43,
+    "fields": {
+      "title": "Mystic River",
+      "description": "A detective investigates strange events happening near a river where many mysteries remain unsolved.",
+      "type": "SERIES",
+      "seasons_count": 5,
+      "image_path": "/media/mystic_river.jpg",
+      "release_date": "2020-09-09",
+      "trailer": "https://youtube.com/watch?v=test43",
+      "genres": [
+        6,
+        7
+      ]
+    }
+  },
+  {
+    "model": "kinozal.media",
+    "pk": 44,
+    "fields": {
+      "title": "Hero Academy",
+      "description": "Young heroes train together and learn how to use their abilities while protecting ordinary people.",
+      "type": "ANIMATION",
+      "seasons_count": null,
+      "image_path": "/media/hero_academy.jpg",
+      "release_date": "2022-11-11",
+      "trailer": "https://youtube.com/watch?v=test44",
+      "genres": [
+        1,
+        5
+      ]
+    }
+  },
+  {
+    "model": "kinozal.media",
+    "pk": 45,
+    "fields": {
+      "title": "Deep Space",
+      "description": "Astronauts travel into unexplored space and encounter phenomena that challenge everything they know.",
+      "type": "MOVIE",
+      "seasons_count": null,
+      "image_path": "/media/deep_space.jpg",
+      "release_date": "2024-08-08",
+      "trailer": "https://youtube.com/watch?v=test45",
+      "genres": [
+        8,
+        2
+      ]
+    }
+  },
+  {
+    "model": "kinozal.media",
+    "pk": 46,
+    "fields": {
+      "title": "Broken Dreams",
+      "description": "A group of artists struggles with failures while trying to achieve success and find their purpose.",
+      "type": "SERIES",
+      "seasons_count": 2,
+      "image_path": "/media/broken_dreams.jpg",
+      "release_date": "2017-05-17",
+      "trailer": "https://youtube.com/watch?v=test46",
+      "genres": [
+        3,
+        4
+      ]
+    }
+  },
+  {
+    "model": "kinozal.media",
+    "pk": 47,
+    "fields": {
+      "title": "Dark Horizon",
+      "description": "Scientists discover an unknown threat approaching Earth and must find a way to save humanity.",
+      "type": "MOVIE",
+      "seasons_count": null,
+      "image_path": "/media/dark_horizon.jpg",
+      "release_date": "2023-03-03",
+      "trailer": "https://youtube.com/watch?v=test47",
+      "genres": [
+        8,
+        6
+      ]
+    }
+  },
+  {
+    "model": "kinozal.media",
+    "pk": 48,
+    "fields": {
+      "title": "Fairy Tales",
+      "description": "Animated stories about magical worlds, brave characters and unforgettable adventures for everyone.",
+      "type": "ANIMATION",
+      "seasons_count": null,
+      "image_path": "/media/fairy_tales.jpg",
+      "release_date": "2020-12-12",
+      "trailer": "https://youtube.com/watch?v=test48",
+      "genres": [
+        5,
+        3
+      ]
+    }
+  },
+  {
+    "model": "kinozal.media",
+    "pk": 49,
+    "fields": {
+      "title": "Final Code",
+      "description": "A programmer discovers a secret algorithm that can change the future of technology and society.",
+      "type": "MOVIE",
+      "seasons_count": null,
+      "image_path": "/media/final_code.jpg",
+      "release_date": "2021-07-21",
+      "trailer": "https://youtube.com/watch?v=test49",
+      "genres": [
+        8,
+        7
+      ]
+    }
+  },
+  {
+    "model": "kinozal.media",
+    "pk": 50,
+    "fields": {
+      "title": "Earth Legacy",
+      "description": "A documentary about humanity, nature and the future of our planet based on scientific research.",
+      "type": "DOCUMENTARY",
+      "seasons_count": null,
+      "image_path": "/media/earth_legacy.jpg",
+      "release_date": "2025-09-01",
+      "trailer": "https://youtube.com/watch?v=test50",
+      "genres": [
+        10,
+        4
+      ]
+    }
+  }
+]

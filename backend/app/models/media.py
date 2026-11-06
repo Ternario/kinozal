@@ -8,7 +8,8 @@ from datetime import date
 from sqlalchemy import CheckConstraint, Text, String, Enum, Integer, Date
 from sqlalchemy.orm import Mapped, mapped_column, relationship
 
-from app.models import favorite_media, media_genres
+from app.models.favorite_media import favorite_media
+from app.models.media_genres import media_genres
 
 from db.base import Base
 
@@ -39,7 +40,7 @@ class Media(Base):
             name='check_media_title_length'
         ),
         CheckConstraint(
-            'CHAR_LENGTH(description) BETWEEN 100 AND 5000',
+            'CHAR_LENGTH(description) BETWEEN 50 AND 5000',
             name='check_media_description_length'
         ),
         CheckConstraint(
@@ -47,6 +48,8 @@ class Media(Base):
             (type = 'MOVIE' AND seasons_count IS NULL)
             OR
             (type = 'SERIES' AND seasons_count BETWEEN 1 AND 200)
+            OR
+            (type IN ('ANIMATION', 'DOCUMENTARY') AND seasons_count IS NULL)
             """,
             name='check_media_type_seasons'
         )

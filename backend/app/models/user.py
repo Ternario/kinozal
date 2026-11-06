@@ -10,7 +10,7 @@ from sqlalchemy import text, String, Date, Boolean, DateTime
 from sqlalchemy.orm import Mapped, mapped_column, relationship
 
 from db.base import Base
-from app.models import favorite_media
+from app.models.favorite_media import favorite_media
 
 
 class User(Base):
@@ -31,7 +31,7 @@ class User(Base):
     deleted_at: Mapped[datetime | None] = mapped_column(DateTime, nullable=True)
 
     profile: Mapped[UserProfile] = relationship(
-        'UserProfile', back_populates='user', uselist=False, lazy='join'
+        'UserProfile', back_populates='user', uselist=False, lazy='joined'
     )
 
     comments: Mapped[Comment] = relationship(

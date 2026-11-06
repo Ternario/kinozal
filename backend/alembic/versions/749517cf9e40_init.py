@@ -1,8 +1,8 @@
 """init
 
-Revision ID: 1badf02a141d
+Revision ID: 749517cf9e40
 Revises: 
-Create Date: 2026-07-19 13:53:22.547248
+Create Date: 2026-07-19 16:11:42.307107
 
 """
 from typing import Sequence, Union
@@ -12,7 +12,7 @@ import sqlalchemy as sa
 
 
 # revision identifiers, used by Alembic.
-revision: str = '1badf02a141d'
+revision: str = '749517cf9e40'
 down_revision: Union[str, Sequence[str], None] = None
 branch_labels: Union[str, Sequence[str], None] = None
 depends_on: Union[str, Sequence[str], None] = None
@@ -32,7 +32,7 @@ def upgrade() -> None:
     op.create_table('media',
     sa.Column('title', sa.String(length=255), nullable=False),
     sa.Column('description', sa.Text(), nullable=False),
-    sa.Column('type', sa.Enum('MOVIE', 'SERIES', 'ANIMATION', name='contenttype'), nullable=False),
+    sa.Column('type', sa.Enum('MOVIE', 'SERIES', 'ANIMATION', 'DOCUMENTARY', name='contenttype'), nullable=False),
     sa.Column('seasons_count', sa.Integer(), nullable=True),
     sa.Column('image_path', sa.String(length=500), nullable=True),
     sa.Column('release_date', sa.Date(), nullable=False),
@@ -40,8 +40,8 @@ def upgrade() -> None:
     sa.Column('id', sa.Integer(), autoincrement=True, nullable=False),
     sa.Column('created_at', sa.DateTime(), server_default=sa.text('now()'), nullable=False),
     sa.Column('updated_at', sa.DateTime(), server_default=sa.text('now()'), nullable=False),
-    sa.CheckConstraint("\n            (type = 'MOVIE' AND seasons_count IS NULL)\n            OR\n            (type = 'SERIES' AND seasons_count BETWEEN 1 AND 200)\n            ", name='check_media_type_seasons'),
-    sa.CheckConstraint('CHAR_LENGTH(description) BETWEEN 100 AND 5000', name='check_media_description_length'),
+    sa.CheckConstraint("\n            (type = 'MOVIE' AND seasons_count IS NULL)\n            OR\n            (type = 'SERIES' AND seasons_count BETWEEN 1 AND 200)\n            OR\n            (type IN ('ANIMATION', 'DOCUMENTARY') AND seasons_count IS NULL)\n            ", name='check_media_type_seasons'),
+    sa.CheckConstraint('CHAR_LENGTH(description) BETWEEN 50 AND 5000', name='check_media_description_length'),
     sa.CheckConstraint('CHAR_LENGTH(title) BETWEEN 7 AND 255', name='check_media_title_length'),
     sa.PrimaryKeyConstraint('id')
     )

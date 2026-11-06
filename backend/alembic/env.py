@@ -69,7 +69,9 @@ def run_migrations(connection: Connection) -> None:
         context.run_migrations()
 
 
+
 async def run_async_migrations() -> None:
+    print(f"\n[DEBUG] Подключаемся к: {settings.DATABASE_URL}\n")
     """
     In this scenario we need to create an Engine
     and associate a connection with the context.
@@ -79,11 +81,41 @@ async def run_async_migrations() -> None:
         prefix="sqlalchemy.",
         poolclass=pool.NullPool,
     )
+    try:
+        async with connectable.connect() as connection:
+            await connection.run_sync(run_migrations)
 
-    async with connectable.connect() as connection:
-        await connection.run_sync(run_migrations)
+    except Exception as e:
+        print("\n" + "="*50)
+        print("ПОДРОБНОСТИ ОШИБКИ MYSQL:")
+        print(repr(e))
+        print("="*50 + "\n")
+        raise e
+    finally:
+        await connectable.dispose()
 
-    await connectable.dispose()
+# async def run_async_migrations() -> None:
+#     """
+#     In this scenario we need to create an Engine
+#     and associate a connection with the context.
+#     """
+#     # 1. Получаем секцию из alembic.ini
+#     section = config.get_section(config.config_ini_section, {})
+
+#     # 2. Явно прописываем туда актуальный URL из твоих настроек Python
+#     section["sqlalchemy.url"] = settings.DATABASE_URL
+
+#     # 3. Передаем уже исправленную конфигурацию в конструктор движка
+#     connectable = async_engine_from_config(
+#         section,
+#         prefix="sqlalchemy.",
+#         poolclass=pool.NullPool,
+#     )
+
+#     async with connectable.connect() as connection:
+#         await connection.run_sync(run_migrations)
+
+#     await connectable.dispose()
 
 
 def run_migrations_online() -> None:
